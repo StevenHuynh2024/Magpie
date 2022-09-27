@@ -1,4 +1,4 @@
-package activity5;
+package ChatBot;
 
 import java.util.Random;
 
@@ -49,7 +49,7 @@ public class Magpie5
                 || findKeyword(statement, "sister") >= 0
                 || findKeyword(statement, "brother") >= 0)
         {
-            response = "Tell me more about your family.";
+            response = "My fathers name is Juan Sotomayor and my mothers name is Celina Baez. I have a younger brother also named Juan but no sisters.";
         }
 
         // Responses which require transformations
@@ -62,7 +62,45 @@ public class Magpie5
         {
             response = transformIWantStatement(statement);
         }
-
+        else if (findKeyword(statement, "name", 0) >= 0)
+        {
+            response = "My name is Sonia Sotomayor and my ex husband is Kevin Noonan";
+        }
+        else if (findKeyword(statement, "birthday", 0) >= 0 ||
+                 findKeyword(statement, "age", 0) >= 0 ||
+                 findKeyword(statement, "born", 0) >= 0)
+        {
+            response = "I am 68 years old, I was born on June 25 1954. I was born in The Bronx, New York.";
+        }
+        else if (findKeyword(statement, "husband", 0) >= 0 ||
+             findKeyword(statement, "married", 0) >= 0)
+        {
+            response = "My ex husband is Kevin Noonan, I divorced him in 1983";
+        }
+        else if (findKeyword(statement, "children", 0) >= 0 ||
+                 findKeyword(statement, "kids", 0) >= 0)
+        {
+            response = "I have no children";
+        }
+        else if (findKeyword(statement, "live", 0) >= 0)
+        {
+            response = "I currently live in Cleveland Park, Washington D.C.";
+        }
+        else if (findKeyword(statement, "job", 0) >= 0 ||
+                 findKeyword(statement, "work", 0) >= 0)
+        {
+            response = "I am an American lawyer and jurist who is serving as an associate justice of the Supreme Court of the United States.";
+        }
+        else if (findKeyword(statement, "famous", 0) >= 0 ||
+                 findKeyword(statement, "known for", 0) >= 0)
+        {
+            response = "I'm famous for being a an associate justice of the Supreme Court of America";
+        }
+        else if (findKeyword(statement, "dead", 0) >= 0 ||
+                 findKeyword(statement, "died", 0) >= 0)
+        {
+            response = "I have not yet died";
+        }
         else
         {
 
@@ -263,14 +301,13 @@ public class Magpie5
         return randomResponses [r.nextInt(randomResponses.length)];
     }
     
-    private String [] randomResponses = {"Interesting, tell me more",
-            "Hmmm.",
-            "Do you really think so?",
-            "You don't say.",
-            "really?",
-            "Interesting, don't tell me more",
-            "I'm not interested",
-            "I'm not listening"
+    private String [] randomResponses = {"Fun fact, my father was alcoholic and my mother was emotionally distant",
+            "Fun fact, I felt closest to my grandmother growing up",
+            "Fun fact, I was diagnosed with type one diabetes",
+            "Fun fact, I attended both Princeton and Yale",
+            "Fun fact, I was nominated by both Obama and Bill Clinton",
+            "“It is important for all of us to appreciate where we come from and how that history has really shaped us in ways that we might not understand.”",
+            " “I do know one thing about me: I don't measure myself by others' expectations or let others define my worth.”"
     };
     
 }
